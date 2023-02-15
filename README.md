@@ -1,1 +1,1 @@
-Shel permissions
+alias project
