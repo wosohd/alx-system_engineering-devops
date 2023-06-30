@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 #Displays line containing a bash word
+# shellcheck disable=SC2009
 
 pgrep bash
