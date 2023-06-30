@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#Displays line containing a bash word
 
 pgrep bash
