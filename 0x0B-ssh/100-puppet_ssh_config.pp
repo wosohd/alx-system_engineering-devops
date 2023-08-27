@@ -1,14 +1,14 @@
-#!/usr/bin/env bash
-# using puppet to make changes to config. file
+##!/usr/bin/env bash
+# Using puppet to make changes to config file
 
-file { 'etc/ssh/ssh_config':
-	ensure => present,
+file_line { 'Turn off passwd auth':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    PasswordAuthentication no',
+}
 
-content =>"
-
-	#SSH client configuration
-	host*
-	IdentityFile ~/.ssh/school
-	PasswordAuthentication no
-	",
+file_line { 'Declare identity file':
+  ensure => 'present',
+  path   => '/etc/ssh/ssh_config',
+  line   => '    IdentityFile ~/.ssh/school',
 }
