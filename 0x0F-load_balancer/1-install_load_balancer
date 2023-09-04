@@ -30,4 +30,4 @@ echo "ENABLED=1" | sudo tee -a /etc/default/haproxy
 sudo haproxy -c -f /etc/haproxy/haproxy.cfg
 
 # Restart the Nginx service
-sudo service haproxy restar
+sudo service haproxy restart
