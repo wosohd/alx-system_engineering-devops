@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 """Prints a hot post on a given Reddit subreddit"""
-
 from requests import get
 
 def top_ten(subreddit):
