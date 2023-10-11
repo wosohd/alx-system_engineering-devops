@@ -1,9 +1,11 @@
-#Puppet Manuscript that replaces a line in a file of a server
+# A Puppet manifest to replace a line in a file on a server
 
 $file_to_edit = '/var/www/html/wp-settings.php'
-$new_content = file("/etc/puppet/modules/mymodule/templates/${file_to_edit}.erb")
 
-file { $file_to_edit:
-  ensure  => 'file',       # Ensure that the file exists
-  content => $new_content, # Set the content to the desired content
+file_line { 'replace_line':
+  path    => $file_to_edit,
+  line    => 'php',
+  match   => 'phpp',
+  ensure  => present,
 }
+
